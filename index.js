@@ -1,6 +1,5 @@
 import http from 'node:http'
 import fs from 'node:fs'
-import url from 'node:url'
 
 const server = http.createServer((request, response) => {
 
