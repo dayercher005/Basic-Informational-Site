@@ -1,6 +1,6 @@
 // import http from 'node:http'
 import fs from 'node:fs'
-const express = require('express');
+import express from 'express'
 const app = express();
 
 /* const server = http.createServer((request, response) => {
@@ -67,7 +67,7 @@ app.get("/", (request, response) => {
 
 
 app.get("/about", (request, response) => {
-    fs.readFile('./about-me.html', 'utf-8', (error, data) => {
+    fs.readFile('./about.html', 'utf-8', (error, data) => {
         response.send(data)
     })
 })
@@ -78,9 +78,9 @@ app.get("/contact-me", (request, response) => {
     })
 })
 
-app.get("./*", (request, response) => {
+app.get("./*splat", (request, response) => {
     fs.readFile('./404.html', 'utf-8', (error, data) => {
-        response.status(404).send(data)
+        response.send(data)
     })
 })
 
